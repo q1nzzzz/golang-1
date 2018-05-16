@@ -1,0 +1,15 @@
+由于被屏蔽的缘故，vscode的许多go插件无法直接下载，可以通过下面的方法解决部分问题！
+###解决办法
+
+进行如下命令进行目录切换：
+cd %GOPATH%\src\github.com\golang，如果src目录下面没有github.com\golang请自行创建
+
+完成目录切换后，开始下载插件包：
+git clone https://github.com/golang/tools.git tools
+
+当下载完成后，你会发现%GOPATH%\src\github.com\golang多了一个tools目录
+需要把tools目录下的所有文件拷贝到%GOPATH%\src\golang.org\x\tools下，如果没有自行创建
+当然如果你是windows环境，如果你当前是在%GOPATH%\src\golang.org\x\tools
+目录下，你可以直接使用如下命令进行拷贝：
+xcopy /s /e %GOPATH%\src\github.com\golang\tools
+关于这个命令的使用可以具体百度查看，如果对该命令不熟悉就手动拷贝,直接将你下载的tools目录下的所有文件拷贝到%GOPATH%\src\golang.org\x\tools目录下
